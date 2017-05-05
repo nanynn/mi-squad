@@ -26,19 +26,23 @@ arrSquad.push(simone);
 
 var sandra; 
 
-var dulce = new MiembroSquad('Dulce', 15, ['cocinar', 'leer', 'subir montañas'], 'miembro6');
+var dulce = new MiembroSquad('Dulce Frau', 21, ['cocinar', 'leer', 'subir montañas'], 'miembro6');
 arrSquad.push(dulce);
 
 
 var lista =document.getElementById('integrante');
 
 arrSquad.forEach(function(element){
-	lista.innerHTML += '<br>Nombre: '+ element.nombre + '<br>Edad: '+ element.edad + '<br>Hobbies: ' + '<ul>';
+	var squad = document.createElement('div');
+	squad.innerHTML += '<br>Nombre: '+ element.nombre + '<br>Edad: '+ element.edad + '<br>Hobbies: ';
 
-	element.hobbies.forEach(function(e){
-	lista.innerHTML += "<li>" + e + "</li>";
-	})
-	lista.innerHTML += '</ul>';
+		var lis = document.createElement('ul');
+			element.hobbies.forEach(function(e){
+			lis.innerHTML += "<li>" + e + "</li>";
+			})
+		squad.appendChild(lis);
+
+	lista.appendChild(squad);
 })
 
 /*lista.innerHTML += '<br>Nombre: '+ josefa.nombre + '<br>Edad: '+ josefa.edad + '<br>Hobbies: ' + josefa.hobbies+'<br>';
@@ -49,7 +53,7 @@ lista.innerHTML += '<br>Nombre: '+ muri.nombre + '<br>Edad: '+ muri.edad + '<br>
 lista.innerHTML += '<br>Nombre: '+ simone.nombre + '<br>Edad: '+ simone.edad + '<br>Hobbies: ' + simone.hobbies+'<br>';
 lista.innerHTML += '<br>Nombre: '+ dulce.nombre + '<br>Edad: '+ dulce.edad + '<br>Hobbies: ' + dulce.hobbies+'<br>';*/
 
-
+//function Comentarios(id, ){}
 
 
 
