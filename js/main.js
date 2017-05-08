@@ -73,40 +73,17 @@ mostrarDatos();
 
 
 function dejarComent(){
-	var comentarios = document.getElementsByClassName('palabras');
+	var comentar = document.getElementsByClassName('palabras');
 	var espacioComentario = document.getElementById('div');
-	comentarios.value = "";
-	comentarios[0].innerHTML += espacioComentario.value;
+	comentar.value;
+	comentar[0].innerHTML += espacioComentario.value;
 	
 }
 
 function sumarLike(){
 	var numero = 0;
 	numero ++;
-
 }
-
-
-
-/*lista.innerHTML += '<br>Nombre: '+ josefa.nombre + '<br>Edad: '+ josefa.edad + '<br>Hobbies: ' + josefa.hobbies+'<br>';
-lista.innerHTML += '<br>Nombre: '+ mai.nombre + '<br>Edad: '+ mai.edad + '<br>Hobbies: ' + mai.hobbies+'<br>';
-lista.innerHTML += '<br>Nombre: '+ caro.nombre + '<br>Edad: '+ caro.edad + '<br>Hobbies: ' + caro.hobbies+'<br>';
-lista.innerHTML += '<br>Nombre: '+ anais.nombre + '<br>Edad: '+ anais.edad + '<br>Hobbies: ' + anais.hobbies+'<br>';
-lista.innerHTML += '<br>Nombre: '+ muri.nombre + '<br>Edad: '+ muri.edad + '<br>Hobbies: ' + muri.hobbies+'<br>';
-lista.innerHTML += '<br>Nombre: '+ simone.nombre + '<br>Edad: '+ simone.edad + '<br>Hobbies: ' + simone.hobbies+'<br>';
-lista.innerHTML += '<br>Nombre: '+ dulce.nombre + '<br>Edad: '+ dulce.edad + '<br>Hobbies: ' + dulce.hobbies+'<br>';*/
-
-/*	<label for="nuevo">Añadir una nueva tarea</label>
-	<input type="nuevo" id="nuevo">
-
-	<button id="boton" onclick="botonFuncional()">Añadir</button>
-
-	 function botonFuncional() {
- -	var input = document.getElementById('nuevo').value;
- +	var parametro = document.getElementById('nuevo').value;
-  	var informacion = document.getElementsByClassName('anadir-tarea');
- -	informacion[0].innerHTML += "<li>" + input + "</li>";
- -}*/
 
 
 
