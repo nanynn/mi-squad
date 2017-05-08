@@ -30,42 +30,41 @@ arrSquad.push(dulce);
 
 var sandra; //no dió sus datos
 
+function Comentarios(id,comentario,likes){
+	this.id = id;
+	this.comentario = comentario;
+	this.like = likes;
+}
+
 function mostrarDatos(){
+	var lista =document.getElementById('integrante');
 
-var lista =document.getElementById('integrante');
+		arrSquad.forEach(function(element){
+		var squad = document.createElement('div');
+		squad.innerHTML += '<br>Nombre: '+ element.nombre + '<br>Edad: '+ element.edad + '<br>Hobbies: ';
 
-	arrSquad.forEach(function(element){
-	var squad = document.createElement('div');
-	squad.innerHTML += '<br>Nombre: '+ element.nombre + '<br>Edad: '+ element.edad + '<br>Hobbies: ';
+			var lis = document.createElement('ul');
+				element.hobbies.forEach(function(e){
+				lis.innerHTML += "<li>" + e + "</li>";
+				})
+			squad.appendChild(lis);
 
-		var lis = document.createElement('ul');
-			element.hobbies.forEach(function(e){
-			lis.innerHTML += "<li>" + e + "</li>";
-			})
-		squad.appendChild(lis);
+			var coment = document.createElement('textarea');
+			coment.class="palabras";
+			squad.appendChild(coment);
 
-		var coment = document.createElement('textarea');
-		coment.class="palabras";
-		squad.appendChild(coment);
+			var boton = document.createElement('button');
+			boton.onclick="dejarComent()";
+			boton.innerHTML += 'Agregar comentario';
+			squad.appendChild(boton);
 
-		var boton = document.createElement('button');
-		boton.onclick="dejarComent()";
-		boton.innerHTML += 'Agregar comentario';
-		squad.appendChild(boton);
+			var corazon = document.createElement('button');
+			corazon.onclick = "sumarLike()";
+			corazon.innerHTML += '<i class="fa fa-heart" aria-hidden="true"></i>';
+			squad.appendChild(corazon);
 
-		var corazon = document.createElement('button');
-		corazon.innerHTML += '<i class="fa fa-heart" aria-hidden="true"></i>';
-		squad.appendChild(corazon);
-
-		var espacioComentario = document.createElement('div');
-		squad.appendChild(espacioComentario);
-
-		function dejarComent(){
-			var comentarios = document.getElementsByClassName('palabras');
-			var espacioComentario = document.getElementById('div');
-			comentarios[0].innerHTML += espacioComentario.value;
-			comentarios.value = "";
-		}
+			var espacioComentario = document.createElement('div');
+			squad.appendChild(espacioComentario);
 
 	lista.appendChild(squad);
 	})
@@ -73,17 +72,21 @@ var lista =document.getElementById('integrante');
 mostrarDatos();
 
 
-
+function dejarComent(){
+	var comentarios = document.getElementsByClassName('palabras');
+	var espacioComentario = document.getElementById('div');
+	comentarios.value = "";
+	comentarios[0].innerHTML += espacioComentario.value;
+	
+}
 
 function sumarLike(){
+	var numero = 0;
+	numero ++;
 
 }
 
-function Comentarios(id,comentario,likes){
-	this.id = id;
-	this.comentario = comentario;
-	this.like = likes;
-}
+
 
 /*lista.innerHTML += '<br>Nombre: '+ josefa.nombre + '<br>Edad: '+ josefa.edad + '<br>Hobbies: ' + josefa.hobbies+'<br>';
 lista.innerHTML += '<br>Nombre: '+ mai.nombre + '<br>Edad: '+ mai.edad + '<br>Hobbies: ' + mai.hobbies+'<br>';
